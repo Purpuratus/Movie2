@@ -1,0 +1,128 @@
+/* ---------- results banner (search bar re-appears here) ---------- */
+.results-banner {
+  background:
+    radial-gradient(ellipse 700px 320px at 20% -20%, rgb(232 179 61 / 0.12), transparent 60%),
+    radial-gradient(ellipse 600px 300px at 90% 0%, rgb(193 68 60 / 0.14), transparent 60%),
+    var(--curtain);
+  border-bottom: 1px solid var(--line);
+}
+
+.results-banner-inner {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: 3.2rem 1.5rem 2.6rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.results-banner-inner h1 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: clamp(1.9rem, 4.5vw, 2.6rem);
+  margin: 0;
+}
+
+.results-banner-inner .search-bar {
+  width: min(640px, 100%);
+  margin-top: 0.4rem;
+}
+
+.results {
+  padding-top: 2.4rem;
+}
+
+.results-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.4rem 2rem;
+  margin-bottom: 1.8rem;
+}
+
+.results-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.results-heading h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  font-size: 1.4rem;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.results-count {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+}
+
+.results-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.type-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.45rem 1rem;
+}
+
+.type-filter select {
+  background: transparent;
+  border: none;
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+.type-filter select:focus {
+  outline: none;
+}
+
+.type-filter select option {
+  background: var(--bg-raised);
+  color: var(--ink);
+}
+
+.load-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.4rem;
+}
+
+@media (max-width: 640px) {
+  .results-banner-inner {
+    padding: 2.4rem 1.1rem 2rem;
+  }
+  .results-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .results-controls {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .type-filter,
+  .sort-select,
+  .year-range {
+    width: 100%;
+  }
+}
